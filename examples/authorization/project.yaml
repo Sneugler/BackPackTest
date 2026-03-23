@@ -1,0 +1,8 @@
+name: Example Authorized Engagement
+environment_type: client_authorized
+authorization_text: |
+  Statement of work confirms the operator is allowed to perform authenticated application review and configuration validation.
+  In scope: app.example.com, api.example.com, github.com/example/repo.git
+  Out of scope: prod-db.example.com
+  Window: weekdays 02:00-06:00 UTC
+  Contact: sponsor@example.com, security@example.com

@@ -1,0 +1,11 @@
+targets:
+  - value: app.example.com
+    owner: web-platform
+    sensitivity: internal
+    criticality: high
+    tags: [web, production]
+  - value: https://api.example.com/v1
+    owner: api-team
+    sensitivity: confidential
+    criticality: critical
+    tags: [api]
