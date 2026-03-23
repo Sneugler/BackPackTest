@@ -1,0 +1,13 @@
+name: Credential Access Validation
+objective: Validate whether identity controls and detections respond to simulated credential access behavior in a lab.
+attack_mapping:
+  - T1003
+preconditions:
+  - Lab tenant prepared
+  - Approval window opened
+success_criteria:
+  - Expected telemetry captured
+  - Control owners can review outputs
+expected_telemetry:
+  - identity provider alerts
+  - EDR process telemetry

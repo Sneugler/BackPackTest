@@ -1,0 +1,114 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegisforge"
+version = "0.1.0"
+description = "Authorized-use cybersecurity operator platform for scoped assessments, validation, and reporting"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "OpenAI Codex"}]
+dependencies = [
+  "typer>=0.12,<1.0",
+  "pydantic>=2.6,<3.0",
+  "PyYAML>=6.0,<7.0",
+  "jinja2>=3.1,<4.0",
+  "fastapi>=0.115,<1.0",
+  "uvicorn>=0.30,<1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9.0",
+  "pytest-cov>=5.0,<6.0",
+  "ruff>=0.4,<1.0",
+]
+
+[project.scripts]
+aegisforge = "aegisforge_cli.main:app"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = [
+  "packages/core",
+  "packages/cli",
+  "packages/models",
+  "packages/storage",
+  "packages/config",
+  "packages/logging",
+  "packages/parsers",
+  "packages/evidence",
+  "packages/reporting",
+  "packages/workflows",
+  "packages/plugins",
+  "packages/modules/permission_scope",
+  "packages/modules/surface_mapper",
+  "packages/modules/campaign_planner",
+  "packages/modules/config_audit",
+  "packages/modules/code_guard",
+  "packages/modules/detection_forge",
+  "packages/modules/evidence_vault",
+  "packages/modules/secret_scanner",
+  "packages/modules/dependency_lens",
+  "packages/modules/api_guard",
+  "packages/modules/automation_engine",
+  "packages/modules/risk_prioritizer",
+  "packages/modules/report_smith",
+  "packages/modules/hardening_workbench",
+  "packages/modules/engagement_flow",
+  "packages/modules/emulation_lab",
+  "packages/modules/operator_workbench",
+  "packages/modules/preflight_guard",
+  "packages/modules/toolkit_planner",
+  "packages/modules/upgrade_engine",
+  "packages/dashboard"
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".",
+  "packages/core",
+  "packages/cli",
+  "packages/models",
+  "packages/storage",
+  "packages/config",
+  "packages/logging",
+  "packages/parsers",
+  "packages/evidence",
+  "packages/reporting",
+  "packages/workflows",
+  "packages/plugins",
+  "packages/modules/permission_scope",
+  "packages/modules/surface_mapper",
+  "packages/modules/campaign_planner",
+  "packages/modules/config_audit",
+  "packages/modules/code_guard",
+  "packages/modules/detection_forge",
+  "packages/modules/evidence_vault",
+  "packages/modules/secret_scanner",
+  "packages/modules/dependency_lens",
+  "packages/modules/api_guard",
+  "packages/modules/risk_prioritizer",
+  "packages/modules/report_smith",
+  "packages/modules/hardening_workbench",
+  "packages/modules/engagement_flow",
+  "packages/modules/emulation_lab",
+  "packages/modules/operator_workbench",
+  "packages/modules/preflight_guard",
+  "packages/modules/toolkit_planner",
+  "packages/modules/upgrade_engine",
+  "packages/modules/automation_engine",
+  "packages/dashboard"
+]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+
+'target-version' = 'py311'
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]

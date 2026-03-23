@@ -1,0 +1,5 @@
+rules:
+  - if: project_has_targets
+    then: [SurfaceMapper, EngagementFlow]
+  - if: project_has_evidence
+    then: [EvidenceVault, ReportSmith]
